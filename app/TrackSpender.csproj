@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>TrackSpender</AssemblyName>
+    <RootNamespace>TrackSpender</RootNamespace>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+  </PropertyGroup>
+
+  <!-- The C/C++ core, produced by build.bat (CMake) -->
+  <ItemGroup>
+    <None Include="..\native\build\Release\trackspender_core.dll"
+          Link="trackspender_core.dll"
+          CopyToOutputDirectory="PreserveNewest"
+          Condition="Exists('..\native\build\Release\trackspender_core.dll')" />
+  </ItemGroup>
+
+</Project>
